@@ -1,9 +1,8 @@
-import uuid
+import os
 from supabase import create_client, Client
-from datetime import datetime
 
-url = "https://jjfvrabgqxzdrzkybgvi.supabase.co"  # your Supabase project URL
-key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqZnZyYWJncXh6ZHJ6a3liZ3ZpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTQ5ODcxNCwiZXhwIjoyMDc3MDc0NzE0fQ.zH--_gKxaEgTGU6U6xIWLvUE49xMm3wpVq1fxmvjn_k"  # get this from Supabase Settings → API → Service Role Key
+url = os.environ["SUPABASE_URL"]
+key = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase: Client = create_client(url, key)
 
